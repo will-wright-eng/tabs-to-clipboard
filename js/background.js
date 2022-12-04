@@ -4,8 +4,6 @@ chrome.commands.onCommand.addListener((command) => {
 
   (async function wrapCopytoClipboard(){
     const tabs = await chrome.tabs.query({active: true, currentWindow: true});
-    console.log(tabs[0]);
-    console.log(tabs[0].id);
     var mdTabs = await tabs.map(({ title, url }) => `- [${title}](${url})`);
     var content = mdTabs.join('\n');
     console.log(content);
@@ -15,10 +13,7 @@ chrome.commands.onCommand.addListener((command) => {
     chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello", "copyText": content}, function(response) {
       // WARNING! Might be evaluating an evil script!
       // 3. Got an asynchronous response with the data from the service worker
-      console.log('received user data', response);
-      // initializeUI(response);
-      var resp = `(${response.farewell})`;
-      console.log(resp);
+      console.log(response);
     });
 
   })();

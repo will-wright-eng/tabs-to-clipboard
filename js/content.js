@@ -1,7 +1,6 @@
 console.log('content.js loaded');
 
 function unsecuredCopyToClipboard(text) {
-  console.log(text);
   const textArea = document.createElement("textarea");
   textArea.value = text;
   document.body.appendChild(textArea);
@@ -13,7 +12,6 @@ function unsecuredCopyToClipboard(text) {
     console.error('Unable to copy to clipboard', err);
   }
   document.body.removeChild(textArea);
-  console.log('unsecured successful');
 }
 
 function copyToClipboard(content) {
@@ -28,7 +26,6 @@ function copyToClipboard(content) {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // 2. A page requested user data, respond with a copy of `user`
-  console.log('message recieved');
   console.log(message.copyText);
   copyToClipboard(message.copyText);
 });

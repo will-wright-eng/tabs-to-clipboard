@@ -1,6 +1,7 @@
 {
-  "name": "Commands demo - action invocation",
-  "version": "1.0",
+  "name": "Tabs to Clipboard",
+  "version": "0.1.0",
+  "description": "dev",
   "manifest_version": 3,
   "background": {
     "service_worker": "js/background.js"
