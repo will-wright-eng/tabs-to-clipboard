@@ -1,0 +1,50 @@
+{
+  "name": "Tabs to Clipboard",
+  "version": "0.1.0",
+  "description": "dev",
+  "manifest_version": 3,
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "nativeMessaging",
+    "tabGroups",
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms",
+    "tabs",
+    "idle"
+  ],
+  "commands": {
+    "run-foo": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Run \"foo\" on the current page."
+    },
+    "_execute_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U",
+        "chromeos": "Ctrl+Shift+U",
+        "linux": "Ctrl+Shift+U"
+      }
+    }
+  },
+  "content_scripts": [{
+      "js": ["js/content.js"],
+      "matches": ["*://*/*"]
+  }]
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body id="parent">
+    <template id="li_template">
+      <li>
+        <a>
+          <h3 class="title">Tab Title</h3>
+          <p class="pathname">Tab Pathname</p>
+        </a>
+      </li>
+    </template>
+
+    <div>
+      <h3>Copy tabs</h3>
+      <p>copy tab(s) info from current window<br></p>
+    </div>
+    <div>
+      <p>WINDOW<br></p>
+      <button id="json-button">json</button>
+      <button id="urls-button">urls</button>
+      <button id="markdown-button-window">markdown</button>
+    </div>
+    <div>
+      <p>ACTIVE TAB<br></p>
+      <button id="markdown-button-tab">markdown</button>
+    </div>
+
+    <script src="./popup.js" type="module"></script>
+  </body>
+</html>
