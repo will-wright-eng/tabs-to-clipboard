@@ -3,14 +3,29 @@
   "version": "0.1.0",
   "description": "dev",
   "manifest_version": 3,
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
   "background": {
     "service_worker": "js/background.js"
   },
   "action": {
     "default_popup": "popup/popup.html"
   },
-  "permissions": ["activeTab", "scripting"],
-  "action": {},
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "nativeMessaging",
+    "tabGroups",
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms",
+    "tabs",
+    "idle"
+  ],
   "commands": {
     "run-foo": {
       "suggested_key": {

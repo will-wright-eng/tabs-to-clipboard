@@ -17,6 +17,13 @@ jsButton.addEventListener("click", async () => {
   copyToTheClipboard(JSON.stringify(windowsInfo));
 });
 
+const urlButtonWindow = document.querySelector("button#urls-button");
+urlButtonWindow.addEventListener("click", async () => {
+  const tabs = await chrome.tabs.query({currentWindow: true});
+  var urls = await tabs.map(({ title, url }) => `${url}`);
+  copyToTheClipboard(urls.join('\n'));
+});
+
 const mdButtonWindow = document.querySelector("button#markdown-button-window");
 mdButtonWindow.addEventListener("click", async () => {
   const tabs = await chrome.tabs.query({currentWindow: true});
