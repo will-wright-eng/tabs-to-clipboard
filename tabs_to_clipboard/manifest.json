@@ -1,7 +1,7 @@
 {
   "name": "Tabs to Clipboard",
-  "version": "0.1.0",
-  "description": "dev",
+  "version": "0.1.2",
+  "description": "Copy tab(s) to clipboard, formatted as raw json or for easy copy/paste into a markdown document",
   "manifest_version": 3,
   "icons": {
     "16": "images/icon-16.png",
@@ -16,16 +16,6 @@
     "default_popup": "popup/popup.html"
   },
   "host_permissions": ["<all_urls>"],
-  "permissions": [
-    "nativeMessaging",
-    "tabGroups",
-    "activeTab",
-    "scripting",
-    "storage",
-    "alarms",
-    "tabs",
-    "idle"
-  ],
   "commands": {
     "run-foo": {
       "suggested_key": {
