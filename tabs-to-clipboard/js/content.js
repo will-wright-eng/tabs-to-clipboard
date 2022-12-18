@@ -1,7 +1,7 @@
 console.log('content.js loaded');
 
 function unsecuredCopyToClipboard(text) {
-  const textArea = document.createElement("textarea");
+  const textArea = document.createElement('textarea');
   textArea.value = text;
   document.body.appendChild(textArea);
   textArea.focus();

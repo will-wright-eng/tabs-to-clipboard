@@ -34,18 +34,10 @@ git: ## run git add commit push flow
 	@git push
 
 run-es-check: ## check eslinter outputs
-	@./node_modules/.bin/eslint cookiecutter/
-	@./node_modules/.bin/eslint heartbeat/
-	@./node_modules/.bin/eslint omni-search/
 	@./node_modules/.bin/eslint tabs-to-clipboard/
-	@./node_modules/.bin/eslint tracking-extension/
 
 run-es: ## eslinter fix javascript files
-	@./node_modules/.bin/eslint cookiecutter/ --fix
-	@./node_modules/.bin/eslint heartbeat/ --fix
-	@./node_modules/.bin/eslint omni-search/ --fix
 	@./node_modules/.bin/eslint tabs-to-clipboard/ --fix
-	@./node_modules/.bin/eslint tracking-extension/ --fix
 
 install-rvm: ## install rvm then ruby -- separate from system instance
 	@curl -L https://get.rvm.io | bash -s stable
